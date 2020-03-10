@@ -1,1 +1,1 @@
-"# Stop-Spots" 
+Stop spots is a iOS application that locates the nearest restaurants and shops near CTA Stops.

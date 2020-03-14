@@ -16,7 +16,73 @@ class LineViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func BlueLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Blue Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
 
+    
+    @IBAction func YellowLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Yellow Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    @IBAction func PinkLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Pink Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    @IBAction func PurpleLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Purple Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    @IBAction func OrangeLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Orange Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    @IBAction func GreenLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Green Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    @IBAction func BrownLine(_ sender: Any) {
+        let t = "WARNING"
+        let warningMessage = "Brown Line coming soon!\n Only Red Line availible"
+        let alerted = UIAlertController(title:t, message: warningMessage, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismisss", style: .cancel, handler: nil)
+        alerted.addAction(dismiss)
+        
+        present(alerted, animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

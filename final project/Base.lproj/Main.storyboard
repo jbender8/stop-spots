@@ -333,6 +333,9 @@
                                         <rect key="frame" x="37" y="3" width="168" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Blue Line"/>
+                                        <connections>
+                                            <action selector="BlueLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="Jro-cM-UWz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -351,6 +354,9 @@
                                         <rect key="frame" x="19" y="3" width="204" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Brown Line"/>
+                                        <connections>
+                                            <action selector="BrownLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="tud-LA-yl0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -369,6 +375,9 @@
                                         <rect key="frame" x="22" y="3" width="198" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Green Line"/>
+                                        <connections>
+                                            <action selector="GreenLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="xf4-mZ-RhJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -387,6 +396,9 @@
                                         <rect key="frame" x="9" y="3" width="224" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Orange Line"/>
+                                        <connections>
+                                            <action selector="OrangeLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="PgD-w5-atO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -405,6 +417,9 @@
                                         <rect key="frame" x="18" y="3" width="205" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Purple Line"/>
+                                        <connections>
+                                            <action selector="PurpleLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="Pif-Vv-hUH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -423,6 +438,9 @@
                                         <rect key="frame" x="38" y="3" width="166" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Pink Line"/>
+                                        <connections>
+                                            <action selector="PinkLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="Vxz-B6-rPW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95164750647668395" green="0.45386546690739887" blue="0.53550794850735395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -441,6 +459,9 @@
                                         <rect key="frame" x="14" y="3" width="214" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Yellow Line "/>
+                                        <connections>
+                                            <action selector="YellowLine:" destination="xfb-Gk-Aql" eventType="touchUpInside" id="q0q-Qv-33s"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -543,8 +564,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Detail view content goes here" lineBreakMode="tailTruncation" numberOfLines="40" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-5M-Yoe">
-                                <rect key="frame" x="20" y="107" width="374" height="23"/>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" lineBreakMode="tailTruncation" numberOfLines="40" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-5M-Yoe">
+                                <rect key="frame" x="20" y="107" width="374" height="20.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -643,6 +664,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="5Eo-Jl-beR"/>
         <segue reference="kjc-mV-YKW"/>
         <segue reference="Ua0-hD-zS0"/>
     </inferredMetricsTieBreakers>

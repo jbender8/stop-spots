@@ -26,6 +26,8 @@
 		FE449677241CBF0100871C43 /* PurpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE449676241CBF0100871C43 /* PurpleViewController.swift */; };
 		FE449679241CBF1200871C43 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE449678241CBF1200871C43 /* GreenViewController.swift */; };
 		FE44967B241CBF1F00871C43 /* PinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44967A241CBF1F00871C43 /* PinkViewController.swift */; };
+		FEC2ADCB241D630500DBD747 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC2ADCA241D630500DBD747 /* MasterViewController.swift */; };
+		FEC2ADCD241D635500DBD747 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC2ADCC241D635500DBD747 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		FE449676241CBF0100871C43 /* PurpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleViewController.swift; sourceTree = "<group>"; };
 		FE449678241CBF1200871C43 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		FE44967A241CBF1F00871C43 /* PinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkViewController.swift; sourceTree = "<group>"; };
+		FEC2ADCA241D630500DBD747 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FEC2ADCC241D635500DBD747 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				FE44967A241CBF1F00871C43 /* PinkViewController.swift */,
 				FE449674241CBEF400871C43 /* YellowViewController.swift */,
 				FE44963E241CB4AC00871C43 /* Main.storyboard */,
+				FEC2ADCA241D630500DBD747 /* MasterViewController.swift */,
+				FEC2ADCC241D635500DBD747 /* DetailViewController.swift */,
 				FE449641241CB4AF00871C43 /* Assets.xcassets */,
 				FE449643241CB4AF00871C43 /* LaunchScreen.storyboard */,
 				FE449646241CB4AF00871C43 /* Info.plist */,
@@ -297,7 +303,9 @@
 				FE449673241CBEE500871C43 /* BrownViewController.swift in Sources */,
 				FE44963D241CB4AC00871C43 /* ShopsViewController.swift in Sources */,
 				FE44967B241CBF1F00871C43 /* PinkViewController.swift in Sources */,
+				FEC2ADCB241D630500DBD747 /* MasterViewController.swift in Sources */,
 				FE44966B241CB6B800871C43 /* LineViewController.swift in Sources */,
+				FEC2ADCD241D635500DBD747 /* DetailViewController.swift in Sources */,
 				FE44963B241CB4AC00871C43 /* ResturantsViewController.swift in Sources */,
 				FE449679241CBF1200871C43 /* GreenViewController.swift in Sources */,
 				FE44966D241CBEBB00871C43 /* RedlineViewController.swift in Sources */,

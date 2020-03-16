@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+var clicked = 0
 
 class RedlineViewController: UIViewController {
 
@@ -17,14 +21,38 @@ class RedlineViewController: UIViewController {
     }
     
 
+    @IBAction func clickJackson(_ sender: Any) {
+        clicked = 7
+    }
+    @IBAction func clickMonroe(_ sender: Any) {
+        clicked = 6
+    }
+    @IBAction func clickLake(_ sender: Any) {
+        clicked = 5
+    }
+    @IBAction func clickGrand(_ sender: Any) {
+        clicked = 4
+    }
+    @IBAction func clickChicago(_ sender: Any) {
+        clicked = 3
+    }
+    @IBAction func ClickClarkDivision(_ sender: Any) {
+        clicked = 2
+    }
+    @IBAction func clickNorthClybourn(_ sender: Any) {
+        clicked = 1
+    }
+    @IBAction func clickFullerton(_ sender: Any) {
+        clicked = 0
+    }
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */
 
 }
+

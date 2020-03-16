@@ -7,17 +7,10 @@
 //
 
 import UIKit
+import Foundation
+import SwiftyJSON
+import Alamofire
 
-class Recipe {
-    var dishName: String
-    var ingredients: String
-    var directions: String
-    init(dishName: String, ingredients: String, directions: String) {
-        self.dishName = dishName
-        self.ingredients = ingredients
-        self.directions = directions
-    }
-}
 
 class MasterViewController: UITableViewController {
 
@@ -33,15 +26,17 @@ class MasterViewController: UITableViewController {
 
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
 //        navigationItem.rightBarButtonItem = addButton
-        
-        
+
         insertNewObject()
+        
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
     }
-
+    @IBOutlet weak var header: UINavigationItem!
+    
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
@@ -50,26 +45,41 @@ class MasterViewController: UITableViewController {
     @objc
     func insertNewObject() {
         
-        let recipe1 = Recipe(dishName: "Tuna Salad", ingredients: "Tuna\nMayo\nCelery", directions: "Mix tuna and mayo in a bowl\nChop celery\nAdd celery to bowl and mix")
-        let recipe2 = Recipe(dishName: "Peanut Butter and Jelly Sandwich", ingredients: "Peanut Butter\nGrape Jelly\nBread", directions: "Spead peanut butter on bread\nSpread jelly on bread\nAdd together and slice bread down the middle")
-        let recipe3 = Recipe(dishName: "Chicken Salad", ingredients: "Chicken\nMayo\nCelery", directions: "Mix chicken and mayo in a bowl\nChop celery\nAdd celery to bowl and mix")
-        let recipe4 = Recipe(dishName: "Mac and Cheese", ingredients: "Pasta\nCheese\nButter\nMilk", directions: "Boil pasta\nAdd milk and butter\nMix in cheese in pot")
-        let recipe5 = Recipe(dishName: "Scrambled Eggs", ingredients: "Eggs\nCheese\nMilk", directions: "Mix eggs, cheese, and milk in a bowl\nAdd to hot pan\nCook until eggs are solid, stir occasionally")
-        let recipe6 = Recipe(dishName: "Pancakes", ingredients: "Pancake Mix\nMilk", directions: "Mix pancake mix with milk in a large bowl\nAdd mix to a hot pan on stove\nCook until complete")
-        let recipe7 = Recipe(dishName: "Turkey Burgers", ingredients: "Turkey Burger\nCheese\nBuns", directions: "Put Turkey Burger on grill\nCook until center is 165 degrees\nAdd cheese\nPut the burger on a bun and serve")
-        let recipe8 = Recipe(dishName: "Waffles", ingredients: "Waffle Mix\nMilk", directions: "Mix waffle mix with milk in a large bowl\nAdd mix to a waffle maker\nCook until complete")
-        let recipe9 = Recipe(dishName: "Chicken Noodle Soup", ingredients: "Chicken Broth\nChicken Pieces\nPasta", directions: "Boil the broth\nAdd pasta\nAdd pieces of chicken\nCook until complete")
-        let recipe10 = Recipe(dishName: "Turkey Sandwich", ingredients: "Turkey\nMayo\nBread", directions: "Add turkey to the bread\nAdd mayo on the other slice of bread\nAdd cheese if wanted\nServe")
-        let recipe11 = Recipe(dishName: "Berry Smoothie", ingredients: "Berries\nYogurt\nMilk", directions: "Add berries, yogurt, and milk to blender\nBlend until it is well mixed\nServe")
-        let recipe12 = Recipe(dishName: "Baked Chicken Breast", ingredients: "Chicken\nSalt\nPepper\nItalian Seasoning\nButter", directions: "Butter oven cooking dish\nCover raw chicken with salt and pepper\nCook until internal temp is 165\nPut a dash of italian seasoning on top\nServe")
-        
-        let recipes = [recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8, recipe9, recipe10, recipe11, recipe12]
-        
-        for n in 0...11 {
-            objects.insert(recipes[n], at: n)
-            let indexPath = IndexPath(row:n, section: n)
-            tableView.insertRows(at: [indexPath], with: .automatic)
+        var spots = [spot]()
+        if (clicked == 0) {
+            spots = fullertonSpots
+            header.title = "Fullerton Spots"
+        } else if (clicked == 1){
+            spots = clybournSpots
+            header.title = "North/Clybourn Spots"
+        } else if (clicked == 2){
+            spots = divisionSpots
+            header.title = "Clark/Division Spots"
+        } else if (clicked == 3){
+            spots = chicagoSpots
+            header.title = "Chicago Spots"
+        } else if (clicked == 4){
+            spots = grandSpots
+            header.title = "Grand Spots"
+        } else if (clicked == 5){
+            spots = lakeSpots
+            header.title = "Lake Spots"
+        } else if (clicked == 6){
+            spots = monroeSpots
+            header.title = "Monroe Spots"
+        } else {
+            spots = jacksonSpots
+            header.title = "Jackson Spots"
         }
+
+        if(spots.count > 0){
+            for n in 1...spots.count-1 {
+                objects.insert(spots[n], at: n-1)
+                let indexPath = IndexPath(row:n-1, section: n-1)
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
+
 //        objects.insert(recipe1, at: 0)
 //        let indexPath = IndexPath(row: 0, section: 0)
 //        tableView.insertRows(at: [indexPath], with: .automatic)
@@ -80,7 +90,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! Recipe
+                let object = objects[indexPath.row] as! spot
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -102,8 +112,23 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object = objects[indexPath.row] as! Recipe
-        cell.textLabel!.text = object.dishName
+        let object = objects[indexPath.row] as! spot
+        let diff = object.name.count - 20
+        var dots = false
+        var endIndex = object.name.index(object.name.endIndex, offsetBy: 0)
+        if(object.name.count > 20){
+            endIndex = object.name.index(object.name.endIndex, offsetBy: -1 * diff)
+            dots = true
+        }
+        let shortened = object.name[..<endIndex]
+        let tempName = String(shortened)
+        if (dots){
+            cell.textLabel!.text = tempName + "...   [" + object.rating + "/5 Stars]"
+
+        } else {
+            cell.textLabel!.text = tempName + "   [" + object.rating + "/5 Stars]"
+
+        }
         return cell
     }
 

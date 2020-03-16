@@ -40,6 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Fullerton"/>
                                         <connections>
+                                            <action selector="clickFullerton:" destination="5VK-IC-2YT" eventType="touchUpInside" id="Byp-FG-m5q"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="HuE-VD-Q0z"/>
                                         </connections>
                                     </button>
@@ -61,6 +62,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="North/ Clybourn"/>
                                         <connections>
+                                            <action selector="clickNorthClybourn:" destination="5VK-IC-2YT" eventType="touchUpInside" id="4JO-sC-QvC"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="QUw-zn-uUX"/>
                                         </connections>
                                     </button>
@@ -82,6 +84,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Clark/Division"/>
                                         <connections>
+                                            <action selector="ClickClarkDivision:" destination="5VK-IC-2YT" eventType="touchUpInside" id="cEb-oC-MSw"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="dRE-Sv-4lJ"/>
                                         </connections>
                                     </button>
@@ -103,7 +106,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Chicago"/>
                                         <connections>
-                                            <segue destination="3af-1n-GB6" kind="show" id="AP8-mI-Ibh"/>
+                                            <action selector="clickChicago:" destination="5VK-IC-2YT" eventType="touchUpInside" id="ZGM-h0-Cp5"/>
+                                            <segue destination="3af-1n-GB6" kind="show" id="LD8-Ym-BaI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,6 +128,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Lake"/>
                                         <connections>
+                                            <action selector="clickLake:" destination="5VK-IC-2YT" eventType="touchUpInside" id="YYs-KC-6ut"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="i9F-oy-a6A"/>
                                         </connections>
                                     </button>
@@ -145,6 +150,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Monroe"/>
                                         <connections>
+                                            <action selector="clickMonroe:" destination="5VK-IC-2YT" eventType="touchUpInside" id="abN-Vz-gzN"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="oaf-0K-F4r"/>
                                         </connections>
                                     </button>
@@ -166,6 +172,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Jackson"/>
                                         <connections>
+                                            <action selector="clickJackson:" destination="5VK-IC-2YT" eventType="touchUpInside" id="sZ2-sK-ya3"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="UlP-yc-W5i"/>
                                         </connections>
                                     </button>
@@ -190,6 +197,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <state key="normal" title="Grand"/>
                                         <connections>
+                                            <action selector="clickGrand:" destination="5VK-IC-2YT" eventType="touchUpInside" id="i2A-WT-6O2"/>
                                             <segue destination="3af-1n-GB6" kind="show" id="kjc-mV-YKW"/>
                                         </connections>
                                     </button>
@@ -580,9 +588,10 @@
                         <viewLayoutGuide key="safeArea" id="VMa-EC-9cA"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Recipes" id="tap-Ib-tdW" userLabel="Recipes"/>
+                    <navigationItem key="navigationItem" title="Spots" id="tap-Ib-tdW" userLabel="Recipes"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="Ev3-5M-Yoe" id="gOY-DX-zwH"/>
+                        <outlet property="header" destination="tap-Ib-tdW" id="MZe-zW-dlG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBT-vp-Is9" sceneMemberID="firstResponder"/>
@@ -639,7 +648,10 @@
                             <outlet property="delegate" destination="3po-ao-LTj" id="EnW-Kx-i5c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipes" id="9zQ-yO-bAI" userLabel="Recipes"/>
+                    <navigationItem key="navigationItem" title="Spots" id="9zQ-yO-bAI" userLabel="Recipes"/>
+                    <connections>
+                        <outlet property="header" destination="9zQ-yO-bAI" id="4pr-NJ-LwR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZ9-G2-5Ya" sceneMemberID="firstResponder"/>
             </objects>
@@ -664,7 +676,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5Eo-Jl-beR"/>
         <segue reference="kjc-mV-YKW"/>
         <segue reference="Ua0-hD-zS0"/>
     </inferredMetricsTieBreakers>
